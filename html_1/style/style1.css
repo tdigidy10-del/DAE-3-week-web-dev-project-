@@ -125,3 +125,34 @@ box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3) inset;
 .centre{display: block; margin-left: auto;margin-right: auto;margin-top: 25px;}
 .myform{text-align: center;font-size:18px;color: #555557;}
 .img1{border-radius:50%;margin-left: 125px;margin-top: 18px;}
+body{
+  background-color: #fff;
+}
+h1{
+  color: black;
+}
+h3{
+  color: black;
+}
+.img1 {
+  display: block;
+  margin: 0 auto;
+}
+.cta-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 25px;
+  background-color: #00cfff;
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 6px;
+  box-shadow: 0 0 10px #00cfff;
+  transition: all 0.3s ease;
+}
+
+.cta-btn:hover {
+  background-color: #00ffff;
+  box-shadow: 0 0 20px #00ffff;
+  transform: scale(1.05);
+}

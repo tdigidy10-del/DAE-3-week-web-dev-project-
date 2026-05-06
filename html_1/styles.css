@@ -1,0 +1,13 @@
+body{
+    background-color: lightsteelblue;
+}
+body {
+  background-image: url("https://t4.ftcdn.net/jpg/03/58/10/87/360_F_358108785_rNJtmort9m65M3pft5swd7lnKJcTCB8u.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+body {
+  color: aliceblue;
+  text-shadow: 0 0 5px rgba(0, 255, 255, 0.6);
+}
