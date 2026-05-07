@@ -11,3 +11,16 @@ body {
   color: aliceblue;
   text-shadow: 0 0 5px rgba(0, 255, 255, 0.6);
 }
+.cta-btn{
+    color: rgb(236, 238, 240);
+    font-size: larger;
+}
+.photo-1{
+   display: flex;
+   flex-wrap: wrap;
+   margin: 50px;
+   border: 15px groove rgb(4, 17, 35);
+}
+.card-1{
+    font: large;
+}
