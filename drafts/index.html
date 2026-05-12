@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Woah There! | Cybersecurity Awareness</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Share+Tech+Mono&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="https://img.freepik.com/premium-photo/cybersecurity-png-3d-red-icon-transparent-background_53876-982024.jpg">
+</head>
+<body>
+
+    <div id="binary-bg" aria-hidden="true"></div>
+
+    <nav id="topnav">
+        <ul>
+            <li><a href="#warning">Warning</a></li>
+            <li><a href="#prevention">Prevention</a></li>
+            <li><a href="#community">Join Us</a></li>
+            <li><a href="https://www.dataguard.com/cyber-security/awareness/" target="_blank">Learn More</a></li>
+        </ul>
+    </nav>
+
+    <header id="hero">
+        <div id="warning-icon" aria-label="Warning">&#9888;</div>
+        <h1>
+            <span class="white-text">WOAH </span><span class="red-text">THERE!</span>
+        </h1>
+        <p class="subtitle">That was a fake login page.</p>
+        <p class="subtitle">You may have just put <span class="red-text">your personal information</span> at risk.</p>
+        <div class="shield-divider" aria-hidden="true">🔒</div>
+    </header>
+
+    <main>
+
+        <section id="warning" class="hack-card">
+            <div class="lock-icon" aria-hidden="true">🔐</div>
+            <div class="hack-card-text">
+                <h2>YOU COULD'VE <span class="red-text">BEEN HACKED</span></h2>
+                <p>Cyber criminals are always looking for a way in.</p>
+                <p class="red-text">Don't make it easy for them.</p>
+            </div>
+        </section>
+
+        <section id="prevention" class="info-section">
+            <h2>What Went Wrong?</h2>
+            <p>The website you were just on was a bait page designed to steal your login credentials.
+               Imagine a stranger having access to your most private accounts and personal data.</p>
+
+            <h2>How Can I Prevent This?</h2>
+            <ul class="tip-list">
+                <li><span class="red-text">&#10148;</span> Always check the domain — <strong>.com</strong>, <strong>.gov</strong>, <strong>.net</strong> tell you who's behind a site.</li>
+                <li><span class="red-text">&#10148;</span> Look for the padlock icon and <strong>https://</strong> in the address bar.</li>
+                <li><span class="red-text">&#10148;</span> Notice small mistakes: outdated logos, odd fonts, or broken layouts.</li>
+                <li><span class="red-text">&#10148;</span> Hackers are human — they make mistakes. Spot them before they spot you.</li>
+            </ul>
+
+            <div id="threat-level-display">
+                Threat Level: <span id="threat-output">Loading...</span>
+            </div>
+
+            <a href="https://www.dataguard.com/cyber-security/awareness/" class="cta-btn" target="_blank">
+                Stay Safe. Stay Aware. &#10148;
+            </a>
+        </section>
+
+        <section id="community">
+            <h3>Join Our Community</h3>
+            <p class="subtitle">Create an account to receive cybersecurity tips and updates.</p>
+            <div class="form-wrapper">
+                <label for="username">Username</label>
+                <input id="username" type="text" placeholder="Enter Username" autocomplete="off">
+
+                <label for="password">Password</label>
+                <input id="password" type="password" placeholder="Enter Password">
+
+                <button id="create-btn" onclick="handleSignup()">Create Account</button>
+                <p id="signup-message"></p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&#128737; Be aware. Be safe. Be secure.</p>
+        <p class="red-text">Stay smart online.</p>
+        <p class="footer-small">&copy; 2025 Cybersecurity Awareness Project</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

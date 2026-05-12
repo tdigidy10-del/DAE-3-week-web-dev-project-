@@ -1,0 +1,347 @@
+/* ===== LOADER PAGE CSS ===== */
+
+:root {
+  --cyan: #00f5ff;
+  --green: #39ff6e;
+  --red: #ff3b3b;
+  --dark: #020810;
+  --darker: #010508;
+  --card-bg: rgba(0, 245, 255, 0.04);
+  --border: rgba(0, 245, 255, 0.2);
+  --font-mono: 'Share Tech Mono', monospace;
+  --font-display: 'Orbitron', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--dark);
+  color: var(--cyan);
+  font-family: var(--font-mono);
+  min-height: 100vh;
+  overflow: hidden;
+  cursor: crosshair;
+}
+
+/* ===== ANIMATED GRID CANVAS (background) ===== */
+#grid-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  opacity: 0.35;
+}
+
+/* ===== SCANLINES — retro CRT effect ===== */
+.scanlines {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 3px,
+    rgba(0, 0, 0, 0.08) 3px,
+    rgba(0, 0, 0, 0.08) 4px
+  );
+}
+
+/* ===== LOADER SCREEN ===== */
+.loader-screen {
+  position: relative;
+  z-index: 2;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.loader-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+  width: 100%;
+  max-width: 680px;
+}
+
+/* ===== SHIELD ===== */
+.shield-wrap {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.shield {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  animation: shield-pulse 2s ease-in-out infinite;
+}
+
+@keyframes shield-pulse {
+  0%, 100% { filter: drop-shadow(0 0 8px var(--cyan)); }
+  50% { filter: drop-shadow(0 0 24px var(--cyan)); }
+}
+
+.shield-icon {
+  font-size: 52px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Spinning rings around shield */
+.shield-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid var(--cyan);
+  opacity: 0.4;
+}
+
+.ring-1 {
+  width: 90px;
+  height: 90px;
+  animation: spin 4s linear infinite;
+  border-style: dashed;
+}
+
+.ring-2 {
+  width: 115px;
+  height: 115px;
+  animation: spin 7s linear infinite reverse;
+  border-color: rgba(0, 245, 255, 0.3);
+}
+
+.ring-3 {
+  width: 140px;
+  height: 140px;
+  animation: spin 12s linear infinite;
+  border-color: rgba(0, 245, 255, 0.15);
+  border-style: dotted;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* ===== TITLE ===== */
+.site-title {
+  font-family: var(--font-display);
+  font-size: 56px;
+  font-weight: 900;
+  color: var(--cyan);
+  letter-spacing: 12px;
+  text-shadow:
+    0 0 20px var(--cyan),
+    0 0 60px rgba(0, 245, 255, 0.3);
+  opacity: 0;
+  animation: fade-in 0.8s ease forwards 0.4s;
+}
+
+.site-tagline {
+  font-size: 13px;
+  color: rgba(0, 245, 255, 0.5);
+  letter-spacing: 4px;
+  opacity: 0;
+  animation: fade-in 0.8s ease forwards 0.8s;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== TERMINAL ===== */
+.terminal {
+  width: 100%;
+  background: var(--darker);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  opacity: 0;
+  animation: fade-in 0.6s ease forwards 1s;
+}
+
+.terminal-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: rgba(0, 245, 255, 0.05);
+  border-bottom: 1px solid var(--border);
+}
+
+.t-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+.t-dot.red    { background: #ff5f57; }
+.t-dot.yellow { background: #febc2e; }
+.t-dot.green  { background: #28c840; }
+
+.t-label {
+  font-size: 12px;
+  color: rgba(0, 245, 255, 0.4);
+  margin-left: 8px;
+}
+
+.terminal-body {
+  padding: 20px;
+  min-height: 160px;
+  font-size: 13px;
+  line-height: 1.9;
+  color: var(--green);
+}
+
+.t-line {
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+/* Blinking cursor */
+.t-line::after {
+  content: '█';
+  color: var(--cyan);
+  animation: blink 0.8s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* ===== PROGRESS BAR ===== */
+.progress-wrap {
+  width: 100%;
+  height: 6px;
+  background: rgba(0, 245, 255, 0.1);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--cyan), var(--green));
+  border-radius: 3px;
+  transition: width 0.3s ease;
+  box-shadow: 0 0 10px var(--cyan);
+}
+
+.progress-label {
+  font-size: 12px;
+  color: rgba(0, 245, 255, 0.5);
+  letter-spacing: 2px;
+  align-self: flex-start;
+}
+
+/* ===== GET STARTED BUTTON ===== */
+.cta-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.cta-wrap.visible {
+  opacity: 1;
+  pointer-events: all;
+  transform: translateY(0);
+}
+
+.get-started-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 52px;
+  background: transparent;
+  border: 2px solid var(--cyan);
+  color: var(--cyan);
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  border-radius: 4px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+/* Sweep fill on hover */
+.get-started-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--cyan);
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  z-index: 0;
+}
+
+.get-started-btn:hover::before {
+  transform: translateX(0);
+}
+
+.get-started-btn:hover {
+  color: var(--dark);
+  box-shadow: 0 0 40px var(--cyan), 0 0 80px rgba(0, 245, 255, 0.3);
+}
+
+.btn-glitch,
+.btn-arrow {
+  position: relative;
+  z-index: 1;
+}
+
+/* Glitch effect on the button text */
+.get-started-btn:hover .btn-glitch {
+  animation: glitch 0.3s steps(2) infinite;
+}
+
+@keyframes glitch {
+  0%   { text-shadow: 2px 0 var(--red), -2px 0 var(--green); }
+  33%  { text-shadow: -2px 0 var(--red),  2px 0 var(--green); }
+  66%  { text-shadow:  2px 2px var(--red), -2px -2px var(--green); }
+  100% { text-shadow: none; }
+}
+
+.btn-arrow {
+  font-size: 22px;
+  transition: transform 0.3s ease;
+}
+
+.get-started-btn:hover .btn-arrow {
+  transform: translateX(6px);
+}
+
+.cta-sub {
+  font-size: 12px;
+  color: rgba(0, 245, 255, 0.35);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}

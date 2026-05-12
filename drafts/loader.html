@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CyberSafe | Initializing...</title>
+  <link rel="icon" href="https://img.freepik.com/premium-photo/cybersecurity-png-3d-red-icon-transparent-background_53876-982024.jpg">
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="loader.css">
+</head>
+<body>
+
+  <!-- Animated background grid -->
+  <canvas id="grid-canvas"></canvas>
+
+  <!-- Scan line overlay -->
+  <div class="scanlines"></div>
+
+  <!-- Main loader screen -->
+  <div class="loader-screen" id="loader-screen">
+
+    <div class="loader-content">
+
+      <!-- Shield icon -->
+      <div class="shield-wrap">
+        <div class="shield" id="shield">
+          <span class="shield-icon">🛡️</span>
+          <div class="shield-ring ring-1"></div>
+          <div class="shield-ring ring-2"></div>
+          <div class="shield-ring ring-3"></div>
+        </div>
+      </div>
+
+      <!-- Title -->
+      <h1 class="site-title" id="site-title">CYBERSAFE</h1>
+      <p class="site-tagline" id="tagline">THREAT AWARENESS SYSTEM v2.0</p>
+
+      <!-- Terminal log -->
+      <div class="terminal" id="terminal">
+        <div class="terminal-header">
+          <span class="t-dot red"></span>
+          <span class="t-dot yellow"></span>
+          <span class="t-dot green"></span>
+          <span class="t-label">system_boot.sh</span>
+        </div>
+        <div class="terminal-body" id="terminal-body">
+          <div class="t-line" id="t-line"></div>
+        </div>
+      </div>
+
+      <!-- Progress bar -->
+      <div class="progress-wrap">
+        <div class="progress-bar" id="progress-bar"></div>
+      </div>
+      <p class="progress-label" id="progress-label">INITIALIZING... 0%</p>
+
+      <!-- GET STARTED button — hidden until loading is done -->
+      <div class="cta-wrap" id="cta-wrap">
+        <a href="index.html" class="get-started-btn" id="get-started-btn">
+          <span class="btn-glitch" data-text="GET STARTED">GET STARTED</span>
+          <span class="btn-arrow">→</span>
+        </a>
+        <p class="cta-sub">You are about to enter a phishing simulation.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="loader.js"></script>
+</body>
+</html>
