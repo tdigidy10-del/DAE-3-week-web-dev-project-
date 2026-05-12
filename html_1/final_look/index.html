@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Woah There! | Cybersecurity Awareness</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Share+Tech+Mono&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Icon -->
+    <link rel="icon" type="image/x-icon"
+        href="https://img.freepik.com/premium-photo/cybersecurity-png-3d-red-icon-transparent-background_53876-982024.jpg">
+</head>
+
+<body>
+
+    <!-- ========================================================= -->
+    <!-- LOADER OVERLAY -->
+    <!-- ========================================================= -->
+
+    <div id="loader-overlay">
+
+        <canvas id="loader-canvas"></canvas>
+
+        <div class="scanlines"></div>
+
+        <div id="loader-content">
+
+            <div id="loader-shield">
+                <span id="loader-shield-icon">🛡️</span>
+
+                <div class="l-ring r1"></div>
+                <div class="l-ring r2"></div>
+                <div class="l-ring r3"></div>
+            </div>
+
+            <h2 id="loader-title">CYBERSAFE</h2>
+
+            <p id="loader-tagline">
+                THREAT AWARENESS SYSTEM
+            </p>
+
+            <!-- Terminal -->
+            <div id="loader-terminal">
+
+                <div id="loader-term-header">
+
+                    <span class="td red"></span>
+                    <span class="td yellow"></span>
+                    <span class="td green"></span>
+
+                    <span class="t-filename">
+                        system_boot.sh
+                    </span>
+
+                </div>
+
+                <div id="loader-term-body">
+                    <div id="loader-t-line"></div>
+                </div>
+
+            </div>
+
+            <!-- Progress -->
+            <div id="loader-bar-wrap">
+                <div id="loader-bar"></div>
+            </div>
+
+            <p id="loader-bar-label">
+                INITIALIZING... 0%
+            </p>
+
+            <!-- Button -->
+            <div id="loader-cta">
+
+                <button id="loader-btn" onclick="dismissLoader()">
+
+                    <span>GET STARTED</span>
+
+                    <span>&#10148;</span>
+
+                </button>
+
+                <p id="loader-cta-sub">
+                    You are about to enter a phishing simulation.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ========================================================= -->
+    <!-- MAIN WEBSITE -->
+    <!-- ========================================================= -->
+
+    <div id="site-content">
+
+        <div id="binary-bg"></div>
+
+        <!-- NAV -->
+        <nav id="topnav">
+
+            <ul>
+
+                <li>
+                    <a href="#warning">Warning</a>
+                </li>
+
+                <li>
+                    <a href="#prevention">Prevention</a>
+                </li>
+
+                <li>
+                    <a href="#community">Join Us</a>
+                </li>
+
+                <li>
+                    <a href="https://www.dataguard.com/cyber-security/awareness/"
+                        target="_blank">
+
+                        Learn More
+
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+        <!-- HERO -->
+        <header id="hero">
+
+            <div id="warning-icon">
+                ⚠
+            </div>
+
+            <h1>
+
+                <span class="white-text">
+                    WOAH
+                </span>
+
+                <span class="red-text">
+                    THERE!
+                </span>
+
+            </h1>
+
+            <p class="subtitle">
+                That was a fake login page.
+            </p>
+
+            <p class="subtitle">
+
+                You may have just put
+                <span class="red-text">
+                    your personal information
+                </span>
+                at risk.
+
+            </p>
+
+            <div class="shield-divider">
+                🔒
+            </div>
+
+        </header>
+
+        <!-- MAIN -->
+        <main>
+
+            <!-- WARNING CARD -->
+            <section id="warning" class="hack-card">
+
+                <div class="lock-icon">
+                    🔐
+                </div>
+
+                <div class="hack-card-text">
+
+                    <h2>
+
+                        YOU COULD'VE
+                        <span class="red-text">
+                            BEEN HACKED
+                        </span>
+
+                    </h2>
+
+                    <p>
+                        Cyber criminals are always looking for a way in.
+                    </p>
+
+                    <p class="red-text">
+                        Don't make it easy for them.
+                    </p>
+
+                </div>
+
+            </section>
+
+            <!-- PREVENTION -->
+            <section id="prevention">
+
+                <h2>What Went Wrong?</h2>
+
+                <p>
+
+                    The website you were just on was a bait page
+                    designed to steal your login credentials.
+
+                    Imagine a stranger having access to your
+                    most private accounts and personal data.
+
+                </p>
+
+                <h2>How Can I Prevent This?</h2>
+
+                <ul class="tip-list">
+
+                    <li>
+                        <span class="red-text">&#10148;</span>
+
+                        Always check the domain —
+                        .com, .gov, .net tell you who owns a site.
+                    </li>
+
+                    <li>
+                        <span class="red-text">&#10148;</span>
+
+                        Look for HTTPS and the padlock icon.
+                    </li>
+
+                    <li>
+                        <span class="red-text">&#10148;</span>
+
+                        Watch for outdated logos, strange fonts,
+                        or broken layouts.
+                    </li>
+
+                    <li>
+                        <span class="red-text">&#10148;</span>
+
+                        Hackers make mistakes. Learn to spot them.
+                    </li>
+
+                </ul>
+
+                <div id="threat-level-display">
+
+                    Threat Level:
+                    <span id="threat-output">
+                        Loading...
+                    </span>
+
+                </div>
+
+                <a
+                    href="https://www.dataguard.com/cyber-security/awareness/"
+                    class="cta-btn"
+                    target="_blank">
+
+                    Stay Safe. Stay Aware. &#10148;
+
+                </a>
+
+            </section>
+
+            <!-- COMMUNITY -->
+            <section id="community">
+
+                <h3>
+                    Join Our Community
+                </h3>
+
+                <p class="subtitle">
+                    Create an account to receive cybersecurity tips.
+                </p>
+
+                <div class="form-wrapper">
+
+                    <label for="username">
+                        Username
+                    </label>
+
+                    <input
+                        id="username"
+                        type="text"
+                        placeholder="Enter Username"
+                        autocomplete="off">
+
+                    <label for="password">
+                        Password
+                    </label>
+
+                    <input
+                        id="password"
+                        type="password"
+                        placeholder="Enter Password">
+
+                    <button onclick="handleSignup()">
+                        Create Account
+                    </button>
+
+                    <p id="signup-message"></p>
+
+                </div>
+
+            </section>
+
+        </main>
+
+        <!-- FOOTER -->
+        <footer>
+
+            <p>
+                🛡 Be aware. Be safe. Be secure.
+            </p>
+
+            <p class="red-text">
+                Stay smart online.
+            </p>
+
+            <p class="footer-small">
+                © 2026 Cybersecurity Awareness Project
+            </p>
+
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
